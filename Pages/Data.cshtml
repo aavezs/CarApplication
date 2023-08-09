@@ -1,0 +1,23 @@
+﻿@page
+@model CarApplication.Pages.DataModel
+@{
+    ViewData["Title"] = "JSON Data";
+    Layout = "_Layout";
+}
+<h1>JSON Data</h1>
+
+<div class="row">
+    @foreach (var car in Model.Cars)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="@car.Image" class="card-img-top" alt="Car Image">
+                <div class="card-body">
+                    <h5 class="card-title">@car.Make @car.Model</h5>
+                    <p class="card-text">Year: @car.Year</p>
+                    <p class="card-text">Color: @car.Color</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
